@@ -1,0 +1,18 @@
+# Claude Desktop Buddy - Bridge Dependencies
+# Install with: pip install -r requirements.txt
+
+# BLE communication
+bleak>=0.20.0
+
+# System automation
+pyautogui>=0.9.54
+pynput>=1.7.6
+
+# System utilities
+psutil>=5.9.0
+
+# Windows-specific (installed conditionally in setup.py)
+# pywin32>=306; platform_system=="Windows"
+
+# macOS-specific
+# pyobjc>=9.0; platform_system=="Darwin"

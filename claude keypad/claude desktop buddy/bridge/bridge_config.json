@@ -1,0 +1,168 @@
+{
+  "device_name": "ClaudeBuddy",
+  "connection": {
+    "scan_timeout": 10,
+    "reconnect_attempts": 3,
+    "reconnect_delay": 5
+  },
+  "layers": {
+    "default": {
+      "name": "Default",
+      "key1": {
+        "type": "claude_command",
+        "command": "/chat ",
+        "description": "Quick Chat"
+      },
+      "key2": {
+        "type": "system",
+        "action": "focus_window",
+        "description": "Toggle Focus"
+      },
+      "key3": {
+        "type": "claude_command",
+        "command": "/new",
+        "description": "New Chat"
+      },
+      "encoder1": {
+        "type": "scroll",
+        "sensitivity": 3,
+        "description": "Scroll Transcript"
+      },
+      "encoder2": {
+        "type": "font_size",
+        "step": 1,
+        "description": "Font Size"
+      }
+    },
+    "coding": {
+      "name": "Coding",
+      "key1": {
+        "type": "shell",
+        "command": "npm run build",
+        "description": "Run Build"
+      },
+      "key2": {
+        "type": "shell",
+        "command": "npm test",
+        "description": "Run Tests"
+      },
+      "key3": {
+        "type": "claude_command",
+        "command": "/fix",
+        "description": "Quick Fix"
+      },
+      "encoder1": {
+        "type": "keys",
+        "cw": ["f8"],
+        "ccw": ["shift", "f8"],
+        "description": "Navigate Errors"
+      },
+      "encoder2": {
+        "type": "keys",
+        "cw": ["ctrl", "tab"],
+        "ccw": ["ctrl", "shift", "tab"],
+        "description": "Navigate Files"
+      }
+    },
+    "debug": {
+      "name": "Debug",
+      "key1": {
+        "type": "keys",
+        "keys": ["f5"],
+        "description": "Start Debugging"
+      },
+      "key2": {
+        "type": "keys",
+        "keys": ["f9"],
+        "description": "Toggle Breakpoint"
+      },
+      "key3": {
+        "type": "keys",
+        "keys": ["f10"],
+        "description": "Step Over"
+      },
+      "encoder1": {
+        "type": "keys",
+        "cw": ["f11"],
+        "ccw": ["shift", "f11"],
+        "description": "Step In/Out"
+      },
+      "encoder2": {
+        "type": "keys",
+        "cw": ["f5"],
+        "ccw": ["shift", "f5"],
+        "description": "Continue/Stop"
+      }
+    },
+    "media": {
+      "name": "Media",
+      "key1": {
+        "type": "keys",
+        "keys": ["playpause"],
+        "description": "Play/Pause"
+      },
+      "key2": {
+        "type": "keys",
+        "keys": ["prevtrack"],
+        "description": "Previous"
+      },
+      "key3": {
+        "type": "keys",
+        "keys": ["nexttrack"],
+        "description": "Next"
+      },
+      "encoder1": {
+        "type": "keys",
+        "cw": ["volumeup"],
+        "ccw": ["volumedown"],
+        "description": "Volume"
+      },
+      "encoder2": {
+        "type": "keys",
+        "cw": ["right"],
+        "ccw": ["left"],
+        "description": "Seek"
+      }
+    },
+    "approval": {
+      "name": "Approval",
+      "key1": {
+        "type": "callback",
+        "action": "approve",
+        "description": "Approve"
+      },
+      "key2": {
+        "type": "callback",
+        "action": "deny",
+        "description": "Deny"
+      },
+      "key3": {
+        "type": "callback",
+        "action": "details",
+        "description": "Details"
+      }
+    }
+  },
+  "audio": {
+    "enabled": true,
+    "volume": 0.5,
+    "patterns": {
+      "startup": "523:150,0:50,659:150,0:50,784:300",
+      "attention": "1200:150,0:100,800:150,0:100,1200:300",
+      "celebrate": "523:100,659:100,784:200,1047:100,1319:400"
+    }
+  },
+  "claude_desktop": {
+    "auto_detect": true,
+    "window_title": "Claude",
+    "approval_detection": {
+      "enabled": true,
+      "poll_interval": 0.5
+    }
+  },
+  "system": {
+    "focus_timeout": 0.1,
+    "type_interval": 0.01,
+    "scroll_multiplier": 3
+  }
+}
